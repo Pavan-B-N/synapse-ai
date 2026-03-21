@@ -39,6 +39,15 @@
   - **Monitor system health** via a dedicated admin dashboard with RAID tracing, live log streaming, and per-service health checks
 
   ---
+  # Preview Images
+
+![User Dashboard](./PreviewImages/dashboard.png)
+![Service Healths](./PreviewImages/service-healths.png)
+
+**For more preview Images check the folder:** `PreviewImages`
+
+**Youtube Link:** https://youtu.be/zUTwIrRE8MU?si=bFXxBVF7xUfkxHS6
+  ---
 
   ## High-Level Architecture
 
@@ -873,7 +882,3 @@
   - **Gateway Health**: `http://localhost:5000/health`
 
   ---
-
-  ## License
-
-  MIT License
