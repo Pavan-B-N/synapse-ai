@@ -1,0 +1,30 @@
+{
+  "api-gateway": {
+    "host": "localhost",
+    "port": 5000
+  },
+  "auth-server": {
+    "host": "localhost",
+    "port": 3001
+  },
+  "document-server": {
+    "host": "localhost",
+    "port": 3002
+  },
+  "ai-server": {
+    "host": "localhost",
+    "port": 3003
+  },
+  "core-server": {
+    "host": "localhost",
+    "port": 3004
+  },
+  "log-server": {
+    "host": "localhost",
+    "port": 3005
+  },
+  "admin-server": {
+    "host": "localhost",
+    "port": 3006
+  }
+}

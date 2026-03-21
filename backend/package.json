@@ -1,0 +1,16 @@
+{
+  "name": "synapse-ai-backend",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Synapse AI — Microservice Backend (6 independent services)",
+  "scripts": {
+    "dev": "concurrently -k -n log,auth,doc,ai,core,admin,gw -c gray,cyan,green,yellow,magenta,red,blue \"cd log-server && npm run dev\" \"cd auth-server && npm run dev\" \"cd document-server && npm run dev\" \"cd ai-server && npm run dev\" \"cd core-server && npm run dev\" \"cd admin-server && npm run dev\" \"cd api-gateway-server && npm run dev\"",
+    "install:all": "cd log-server && npm i && cd ../auth-server && npm i && cd ../document-server && npm i && cd ../ai-server && npm i && cd ../core-server && npm i && cd ../admin-server && npm i && cd ../api-gateway-server && npm i"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "dependencies": {
+    "@azure/service-bus": "^7.9.5"
+  }
+}
