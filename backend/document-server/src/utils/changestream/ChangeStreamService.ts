@@ -113,7 +113,7 @@ class ChangeStreamService {
 }
 
 // Singleton instance
-const gatewayUrl = process.env.API_GATEWAY_URL || 'http://localhost:5000';
+const gatewayUrl = process.env.API_GATEWAY_URL || 'http://localhost:5001';
 const changeStreamService = new ChangeStreamService(gatewayUrl);
 
 // Named exports for backward compatibility

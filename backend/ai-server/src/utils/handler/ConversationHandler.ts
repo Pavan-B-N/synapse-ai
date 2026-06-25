@@ -4,7 +4,7 @@ import QueryHistory from '../../models/QueryHistory';
 import { broadcastToUser } from '../broadcast/GatewayBroadcaster';
 import { ForbiddenError, NotFoundError, ValidationError } from '../errors';
 
-const GATEWAY_URL = process.env.API_GATEWAY_URL || 'http://localhost:5000';
+const GATEWAY_URL = process.env.API_GATEWAY_URL || 'http://localhost:5001';
 
 class ConversationHandler {
   async listConversations(userId: string) {

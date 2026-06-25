@@ -2,3 +2,5 @@
 **/node_modules
 **/uploads
 **/channel-uploads
+.DS_Store
+**/.DS_Store

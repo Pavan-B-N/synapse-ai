@@ -67,7 +67,7 @@
   └───────────────────────────┼────────────────────────────────────────────────┘
                               │
   ┌───────────────────────────▼────────────────────────────────────────────────┐
-  │                  API Gateway (Express, :5000)                               │
+  │                  API Gateway (Express, :5001)                               │
   │                                                                            │
   │   ┌──────────┐ ┌──────────┐ ┌─────────────┐ ┌────────────┐ ┌──────────┐  │
   │   │ Helmet   │ │ Morgan   │ │ JWT Auth    │ │ Redis Rate │ │ Socket.IO│  │
@@ -156,7 +156,7 @@
 
   | Service | Port | Responsibilities |
   |---------|------|-----------------|
-  | **API Gateway** | 5000 | Reverse proxy, JWT validation, Redis rate limiting, Socket.IO hub with Redis adapter, RAID generation, Helmet security, Morgan HTTP logging |
+  | **API Gateway** | 5001 | Reverse proxy, JWT validation, Redis rate limiting, Socket.IO hub with Redis adapter, RAID generation, Helmet security, Morgan HTTP logging |
   | **Auth Server** | 3001 | User registration, login, email-based OTP verification, JWT access/refresh token issuance with rotation, profile management |
   | **Document Server** | 3002 | Document CRUD, multipart file upload, storage management (100 MB/user), CDC via MongoDB Change Streams, Event Sourcing (EventLog), Bloom filter deduplication, SSE broadcasting, Service Bus publisher |
   | **AI Server** | 3003 | RAG query engine, Azure OpenAI (GPT-4o) integration, embedding generation (1536-dim), vector store operations, document summarization, sentiment analysis, semantic search, content recommendations, async document processing workers, Service Bus subscriber |
@@ -272,7 +272,7 @@
   Only the API Gateway is publicly exposed. All downstream services are protected by the **`s2sGuard`** middleware, which validates the `x-internal-key` header on every inbound request:
 
   ```
-  Browser → API Gateway (:5000) → [x-internal-key injected] → Backend Service
+  Browser → API Gateway (:5001) → [x-internal-key injected] → Backend Service
                                       │
                             s2sGuard validates header
                             against S2S_SECRET env var
@@ -868,7 +868,7 @@
   cd backend/ai-server && npm run dev           # :3003
   cd backend/core-server && npm run dev         # :3004
   cd backend/admin-server && npm run dev        # :3006
-  cd backend/api-gateway-server && npm run dev  # :5000
+  cd backend/api-gateway-server && npm run dev  # :5001
 
   # Frontends
   cd frontend && npm run dev                    # :5173
@@ -879,6 +879,6 @@
 
   - **User App**: `http://localhost:5173`
   - **Admin Dashboard**: `http://localhost:5174` (or configured port)
-  - **Gateway Health**: `http://localhost:5000/health`
+  - **Gateway Health**: `http://localhost:5001/health`
 
   ---

@@ -4,7 +4,7 @@
  */
 import { io as ioClient, Socket } from 'socket.io-client';
 
-const GATEWAY_URL = process.env.API_GATEWAY_URL || 'http://localhost:5000';
+const GATEWAY_URL = process.env.API_GATEWAY_URL || 'http://localhost:5001';
 
 /**
  * GatewayBroadcaster — OOP wrapper for broadcasting events to the API gateway.

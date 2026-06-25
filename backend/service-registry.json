@@ -1,7 +1,7 @@
 {
   "api-gateway": {
     "host": "localhost",
-    "port": 5000
+    "port": 5001
   },
   "auth-server": {
     "host": "localhost",

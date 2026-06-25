@@ -78,7 +78,7 @@ class DocumentShareHandler {
   }
 
   private notifyUser(targetUserId: string, notification: any, actorUserId: string) {
-    const gatewayUrl = process.env.API_GATEWAY_URL || 'http://localhost:5000';
+    const gatewayUrl = process.env.API_GATEWAY_URL || 'http://localhost:5001';
     axios.post(`${gatewayUrl}/api/notifications`, {
       userId: targetUserId,
       ...notification,

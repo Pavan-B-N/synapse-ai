@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { LogEntry } from '../services/api';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 const MAX_ENTRIES = 200;
 
 export default function LiveStreamPage() {
